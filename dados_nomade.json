@@ -1,0 +1,31 @@
+{
+    "escala": [
+        {
+            "nome": "welucci morumbi",
+            "data": "21/03",
+            "valor": 200.0,
+            "local": "R. Dr. Cl\u00f3vis de Oliveira, 224 - Morumbi, S\u00e3o Paulo - SP, 05616-130"
+        },
+        {
+            "nome": "distrito anhembi",
+            "data": "23/03",
+            "valor": 170.0,
+            "local": "Av. Olavo Fontoura, 1209 - Santana, S\u00e3o Paulo - SP, 02001-900"
+        }
+    ],
+    "dividas": [],
+    "equipamentos": [
+        {
+            "item": "Powerbank",
+            "valor": 150.0
+        },
+        {
+            "item": "Fone de Ouvido",
+            "valor": 200.0
+        },
+        {
+            "item": "Rede de Lona",
+            "valor": 120.0
+        }
+    ]
+}
