@@ -1,33 +1,59 @@
-# --- MEU DASHBOARD NÔMADE ---
+# --- SISTEMA DE GESTÃO: ESCALA DE BARTENDER & METAS ---
 
-print("--- 💰 GESTÃO FINANCEIRA DA JULIA 💰 ---")
+# Lista que vai guardar todos os nossos eventos (nossa planilha virtual)
+escala_trabalho = []
+compras_pendentes = [
+    {"item": "Powerbank", "valor": 150.0},
+    {"item": "Fone de Ouvido", "valor": 200.0},
+    {"item": "Rede de Lona", "valor": 120.0}
+]
 
-# 1. ENTRADAS (TRAMPOS DE BARTENDER)
-# Vamos somar quanto você já tem ou vai receber
-ganho_hoje = float(input("Quanto você recebeu no freela de hoje? R$ "))
-local_trampo = input("Onde foi o trampo? ")
+def menu():
+    print("\n" + "="*40)
+    print("      🌟 DASHBOARD DA JULIA 🌟")
+    print("="*40)
+    print("1. Cadastrar Novo Evento")
+    print("2. Ver Minha Escala e Total a Receber")
+    print("3. Ver Lista de Compras (Equipamentos)")
+    print("4. Sair")
+    return input("\nEscolha uma opção: ")
 
-# 2. DÍVIDAS E GASTOS FIXOS (SP)
-dividas_mes = float(input("Qual o total de dívidas para pagar este mês? R$ "))
+while True:
+    opcao = menu()
 
-# 3. EQUIPAMENTOS ESSENCIAIS (META DE COMPRA)
-# Preços estimados "no precinho" em SP
-powerbank = 150.00
-fone_ouvido = 200.00
-rede_lona = 120.00
-total_equipamentos = powerbank + fone_ouvido + rede_lona
+    if opcao == "1":
+        print("\n--- CADASTRAR EVENTO ---")
+        nome = input("Nome do Evento/Lugar: ")
+        data = input("Data (DD/MM): ")
+        valor = float(input("Valor combinado: R$ "))
+        endereco = input("Endereço/Local: ")
+        
+        # Criando a "linha da planilha" e adicionando na lista
+        evento = {"nome": nome, "data": data, "valor": valor, "local": endereco}
+        escala_trabalho.append(evento)
+        print("✅ Evento salvo na escala!")
 
-# --- CÁLCULOS ---
-saldo_atual = ganho_hoje - dividas_mes
-quanto_falta_equipos = total_equipamentos - saldo_atual
+    elif opcao == "2":
+        print("\n--- MINHA ESCALA DETALHADA ---")
+        total_acumulado = 0
+        for ev in escala_trabalho:
+            print(f"📅 {ev['data']} | {ev['nome']} | R$ {ev['valor']:.2f}")
+            print(f"📍 Local: {ev['local']}\n")
+            total_acumulado += ev['valor']
+        
+        print("-" * 20)
+        print(f"💰 TOTAL ACUMULADO A RECEBER: R$ {total_acumulado:.2f}")
 
-# --- RESULTADO NO TERMINAL ---
-print("\n" + "="*30)
-print(f"Resumo do dia no {local_trampo}:")
-print(f"Saldo após pagar dívidas: R$ {saldo_atual:.2f}")
+    elif opcao == "3":
+        print("\n--- EQUIPAMENTOS PARA A VIAGEM ---")
+        total_compra = 0
+        for item in compras_pendentes:
+            print(f"🛒 {item['item']}: R$ {item['valor']:.2f}")
+            total_compra += item['valor']
+        print(f"\n💸 Total necessário para o kit: R$ {total_compra:.2f}")
 
-if saldo_atual >= total_equipamentos:
-    print("✅ Boa! Você já pode comprar o kit essencial!")
-else:
-    print(f"❌ Ainda faltam R$ {quanto_falta_equipos:.2f} para o kit (Powerbank, Fone, Rede).")
-print("="*30)
+    elif opcao == "4":
+        print("Até mais, Julia! Partiu correr ou estudar? 🏃‍♀️💻")
+        break
+    else:
+        print("Opção inválida, tenta de novo!")
