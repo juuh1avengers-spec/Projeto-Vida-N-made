@@ -1,0 +1,21 @@
+--- ESTRUTURA DE DADOS: VIDA NÔMADE ---
+
+[GASTOS]
+- Data: 
+- Categoria: (Hospedagem / Transporte / Comida / Lazer)
+- Valor: 
+- Local: (Cidade/Estado)
+
+[TRABALHO & FREELAS]
+- Tipo: (Bartender / Freelance Tech / Voluntariado)
+- Valor Recebido: 
+- Horas Trabalhadas: 
+
+[ESTUDOS & TREINOS]
+- Minutos de Python:
+- Minutos de Espanhol:
+- KM Corridos:
+- Local da Trilha (se houver):
+
+--- NOTAS ---
+(Espaço para anotar se o Wi-Fi do hostel era bom para trampar ou se a trilha foi boa)
